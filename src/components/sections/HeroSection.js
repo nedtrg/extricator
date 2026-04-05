@@ -88,7 +88,9 @@ export default function HeroSection() {
       {/* Hero text content */}
       <div className="relative z-10 flex flex-col items-center text-center pt-44 pb-12 px-6">
         <h1
-          className="anim-hidden animate-fade-up delay-100 text-white leading-tight mb-5"
+          data-aos="fade-up"
+          data-aos-delay="100"
+          className="anim-hidden text-white leading-tight mb-5"
           style={{
             fontFamily: "Sora, sans-serif",
             fontWeight: 500,
@@ -116,7 +118,11 @@ export default function HeroSection() {
         </p>
 
         {/* CTA Buttons */}
-        <div className="anim-hidden animate-fade-up delay-300 flex items-center gap-4 flex-wrap justify-center">
+        <div
+          data-aos="fade-up"
+          data-aos-delay="150"
+          className="anim-hidden flex items-center gap-4 flex-wrap justify-center"
+        >
           <Link
             href="/gallery"
             className="px-10 py-3.5 rounded-md text-white text-sm font-medium transition-all duration-200 hover:opacity-90 hover:scale-105 active:scale-95"
@@ -148,7 +154,11 @@ export default function HeroSection() {
       {/* NFT Cards */}
       <div className="relative z-10 flex justify-center items-end mt-auto px-6 pb-10">
         {/* Mobile — vertical stack, centered, no rotation */}
-        <div className="flex flex-col items-center gap-6 md:hidden">
+        <div
+          data-aos="fade-up"
+          data-aos-delay="300"
+          className="flex flex-col items-center gap-6 md:hidden"
+        >
           {cards.map((card) => (
             <div
               key={card.index}
@@ -164,7 +174,11 @@ export default function HeroSection() {
         </div>
 
         {/* Desktop — fan arc layout with rotation */}
-        <div className="hidden md:flex items-end justify-center">
+        <div
+          data-aos="fade-left"
+          data-aos-delay="300"
+          className="hidden md:flex items-end justify-center"
+        >
           {cards.map((card) => (
             <NFTPlaceholder
               key={card.index}

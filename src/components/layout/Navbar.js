@@ -10,6 +10,8 @@ export default function Navbar() {
     <nav className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 md:px-12">
       {/* Logo */}
       <Link
+        data-aos="zoom-in"
+        data-aos-delay="150"
         href="/"
         className="text-white font-bold text-xl tracking-tight"
         style={{ fontFamily: "Sora, sans-serif" }}
@@ -18,7 +20,11 @@ export default function Navbar() {
       </Link>
 
       {/* Desktop Nav Links */}
-      <div className="hidden md:flex items-center gap-10">
+      <div
+        data-aos="fade-left"
+        data-aos-delay="250"
+        className="hidden md:flex items-center gap-10"
+      >
         {["Home", "Gallery", "Roadmap"].map((item) => (
           <Link
             key={item}

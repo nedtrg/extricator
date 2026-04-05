@@ -131,8 +131,10 @@ export default function NFTGridSection() {
       className="px-8 md:px-16 py-20"
       style={{ backgroundColor: "#0a0008" }}
     >
-      <div className="flex items-start justify-between mb-10">
+      <div className="flex items-center justify-between mb-10">
         <h2
+          data-aos="fade-left"
+          data-aos-delay="200"
           className="text-white leading-tight"
           style={{
             fontFamily: "Sora, sans-serif",
@@ -146,6 +148,8 @@ export default function NFTGridSection() {
           Arts for the week
         </h2>
         <button
+          data-aos="fade-right"
+          data-aos-delay="300"
           className="flex items-center gap-2 px-6 py-3 rounded-md text-white text-sm font-medium transition-all duration-200 hover:opacity-90 hover:scale-105 mt-2"
           style={{
             backgroundColor: "#6B21FF",
@@ -157,7 +161,11 @@ export default function NFTGridSection() {
         </button>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div
+        data-aos="fade-up"
+        data-aos-delay="300"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+      >
         {nfts.map((nft, i) => (
           <NFTGridCard key={nft.id} nft={nft} index={i} />
         ))}

@@ -35,6 +35,8 @@ export default function AlphaSection() {
 
   return (
     <section
+      data-aos="fade-up"
+      data-aos-delay="300"
       className="px-8 md:px-16 py-12"
       style={{ backgroundColor: "#0a0008" }}
     >
@@ -46,6 +48,8 @@ export default function AlphaSection() {
         }}
       >
         <h2
+          data-aos="fade-up"
+          data-aos-delay="400"
           className="text-white font-bold mb-4"
           style={{
             fontFamily: "Sora, sans-serif",
@@ -58,6 +62,8 @@ export default function AlphaSection() {
           Sign up for early Alpha
         </h2>
         <p
+          data-aos="fade-up"
+          data-aos-delay="500"
           className="mb-8"
           style={{
             color: "rgba(255,255,255,0.75)",
@@ -72,6 +78,8 @@ export default function AlphaSection() {
         </p>
 
         <form
+          data-aos="fade-up"
+          data-aos-delay="600"
           onSubmit={handleSubmit}
           className="flex flex-col sm:flex-row items-center sm:items-stretch gap-3 sm:gap-0 w-full max-w-xl"
         >

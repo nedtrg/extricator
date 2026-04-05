@@ -100,6 +100,8 @@ export default function TeamSection() {
       <div className="flex flex-col md:flex-row gap-12 items-center">
         <div className="md:w-80 flex-shrink-0 text-center md:text-left">
           <h2
+            data-aos="fade-left"
+            data-aos-delay="200"
             className="text-white font-bold leading-tight mb-4"
             style={{
               fontFamily: "Sora, sans-serif",
@@ -110,6 +112,8 @@ export default function TeamSection() {
             Meet the Team
           </h2>
           <p
+            data-aos="fade-right"
+            data-aos-delay="300"
             style={{
               color: "#9b8fa8",
               fontFamily: "Inter, sans-serif",
@@ -121,7 +125,11 @@ export default function TeamSection() {
           </p>
         </div>
 
-        <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div
+          data-aos="fade-up"
+          data-aos-delay="300"
+          className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4"
+        >
           {team.map((member, i) => (
             <TeamCard key={member.id} member={member} index={i} />
           ))}

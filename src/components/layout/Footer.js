@@ -33,6 +33,8 @@ const footerLinks = {
 export default function Footer() {
   return (
     <footer
+      data-aos="fade-up"
+      data-aos-delay="300"
       style={{
         backgroundColor: "#080005",
         borderTop: "1px solid rgba(255,255,255,0.06)",

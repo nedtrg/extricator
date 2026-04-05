@@ -50,12 +50,16 @@ export default function TrackRecordSection() {
     >
       <div className="flex-1 min-w-0">
         <p
+          data-aos="fade-left"
+          data-aos-delay="200"
           className="mb-4 text-sm font-medium"
           style={{ color: "#c0392b", fontFamily: "Inter, sans-serif" }}
         >
           Track record
         </p>
         <h2
+          data-aos="fade-right"
+          data-aos-delay="300"
           className="text-white leading-tight"
           style={{
             fontFamily: "Sora, sans-serif",
@@ -73,6 +77,8 @@ export default function TrackRecordSection() {
 
       <div className="flex-1 min-w-0 flex flex-col gap-10">
         <p
+          data-aos="fade-right"
+          data-aos-delay="200"
           className="leading-relaxed"
           style={{
             color: "#9b8fa8",
@@ -88,7 +94,11 @@ export default function TrackRecordSection() {
         </p>
 
         {/* Stats row */}
-        <div className="flex items-start gap-12 flex-wrap">
+        <div
+          data-aos="fade-left"
+          data-aos-delay="300"
+          className="flex items-start gap-12 flex-wrap"
+        >
           {[
             { value: "24", suffix: "k+", label: "Collections" },
             { value: "18", suffix: "k+", label: "Auctions" },
