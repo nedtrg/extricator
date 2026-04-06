@@ -4,10 +4,17 @@ import { useEffect, useRef, useState } from "react";
 
 function CountUp({ target, suffix = "" }) {
   const [count, setCount] = useState(0);
+  const [mounted, setMounted] = useState(false);
   const ref = useRef(null);
   const started = useRef(false);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !started.current) {
@@ -32,11 +39,11 @@ function CountUp({ target, suffix = "" }) {
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
-  }, [target]);
+  }, [target, mounted]);
 
   return (
-    <span ref={ref} className="tabular-nums">
-      {count}
+    <span ref={ref} className="tabular-nums" suppressHydrationWarning>
+      {mounted ? count : 0}
       {suffix}
     </span>
   );
@@ -48,7 +55,7 @@ export default function TrackRecordSection() {
       className="px-8 md:px-16 py-24 flex flex-col md:flex-row items-center gap-16"
       style={{ backgroundColor: "#080005" }}
     >
-      <div className="flex-1 min-w-0">
+      <div className="flex-1 min-w-0 text-center md:text-left">
         <p
           data-aos="fade-left"
           data-aos-delay="200"
@@ -75,7 +82,7 @@ export default function TrackRecordSection() {
         </h2>
       </div>
 
-      <div className="flex-1 min-w-0 flex flex-col gap-10">
+      <div className="flex-1 min-w-0 flex flex-col gap-10 text-center md:text-left">
         <p
           data-aos="fade-right"
           data-aos-delay="200"
@@ -97,14 +104,17 @@ export default function TrackRecordSection() {
         <div
           data-aos="fade-left"
           data-aos-delay="300"
-          className="flex items-start gap-12 flex-wrap"
+          className="flex items-center gap-12 flex-wrap justify-center md:justify-start"
         >
           {[
             { value: "24", suffix: "k+", label: "Collections" },
             { value: "18", suffix: "k+", label: "Auctions" },
             { value: "10", suffix: "k+", label: "Artists" },
           ].map((stat) => (
-            <div key={stat.label} className="flex flex-col gap-1">
+            <div
+              key={stat.label}
+              className="flex flex-col gap-1 items-center md:items-start"
+            >
               <span
                 className="text-white font-bold"
                 style={{
